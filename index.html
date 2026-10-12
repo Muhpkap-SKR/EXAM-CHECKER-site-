@@ -1,0 +1,184 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>เฉลยวิชาสามัญชีววิทยา</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500&family=Sarabun:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: herbarium index card — a left rail of specimen-number chips, a reading column for each question, answers stamped like a specimen label */
+:root{
+  --paper:#f3f6f2; --sheet:#ffffff; --ink:#1d2b26; --muted:#5d6e66; --line:#d6e0da;
+  --leaf:#2f7a55; --leaf-soft:#e2f0e7; --stamp:#9a3f1c; --stamp-soft:#f7e6dc; --sky:#2c5d86;
+  --f-display:"Mitr","Sarabun",system-ui,sans-serif;
+  --f-body:"Sarabun","Noto Sans Thai",system-ui,sans-serif;
+  --f-num:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#121a17; --sheet:#18221e; --ink:#e3ece7; --muted:#9db0a6; --line:#2c3a34;
+  --leaf:#6cc497; --leaf-soft:#1f3a2d; --stamp:#f0a07c; --stamp-soft:#3e2519; --sky:#8dbbe0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121a17; --sheet:#18221e; --ink:#e3ece7; --muted:#9db0a6; --line:#2c3a34;
+  --leaf:#6cc497; --leaf-soft:#1f3a2d; --stamp:#f0a07c; --stamp-soft:#3e2519; --sky:#8dbbe0; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.7;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px;padding-block:20px 64px}
+a{color:var(--sky)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:4px 18px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink)}
+.brand b{font-family:var(--f-display);font-weight:500;font-size:20px}
+.brand span{color:var(--muted);font-size:14px}
+.crumbs{font-size:15px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a{text-decoration:none}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:clamp(26px,4.5vw,36px)}
+.lede{color:var(--muted);max-width:62ch;margin:.4em 0 0}
+.toggle{display:inline-flex;align-items:center;gap:8px;font-size:15px;cursor:pointer;user-select:none;color:var(--muted)}
+.toggle input{width:18px;height:18px;accent-color:var(--leaf)}
+
+/* home */
+.years{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:26px}
+.year{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:18px 18px 16px;cursor:pointer;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.year:hover{border-color:var(--leaf);transform:translateY(-2px)}
+.year .be{font-family:var(--f-display);font-size:34px;line-height:1;color:var(--leaf)}
+.year .ce{font-family:var(--f-num);font-size:13px;color:var(--muted);letter-spacing:.04em}
+.year .meta{font-size:15px;color:var(--muted)}
+.tag{display:inline-block;font-size:13px;padding:1px 9px;border-radius:99px;background:var(--stamp-soft);color:var(--stamp);font-weight:600;width:max-content}
+.tag.ok{background:var(--leaf-soft);color:var(--leaf)}
+.howto{margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;font-size:15.5px;color:var(--muted)}
+.howto b{color:var(--ink);font-family:var(--f-display);font-weight:500;display:block;font-size:16px}
+
+/* summary */
+.sumhead{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin-top:14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--stamp);margin-right:6px;vertical-align:middle}
+.keygrid{margin-top:20px;columns:3 240px;column-gap:26px;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:10px 18px}
+.row{break-inside:avoid;display:grid;grid-template-columns:44px 40px 1fr;align-items:center;gap:10px;padding:7px 2px;border-bottom:1px dashed var(--line);text-decoration:none;color:var(--ink);min-width:0}
+.row:hover{background:var(--leaf-soft)}
+.row .n{font-family:var(--f-num);font-size:14px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.row .a{font-family:var(--f-num);font-size:17px;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;border:1.5px solid var(--leaf);color:var(--leaf);position:relative}
+.row .a.fix::after{content:"";position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:var(--stamp);border:2px solid var(--sheet)}
+.row .t{font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.hidden-ans .row .a{color:transparent;border-style:dashed}
+.filters{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+
+/* question */
+.qlayout{display:grid;grid-template-columns:1fr;gap:20px}
+.qnav{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.qnav a{flex:0 0 auto;font-family:var(--f-num);font-size:13px;min-width:34px;height:30px;display:grid;place-items:center;border-radius:6px;border:1px solid var(--line);text-decoration:none;color:var(--muted);background:var(--sheet);position:relative}
+.qnav a.cur{background:var(--leaf);color:var(--sheet);border-color:var(--leaf)}
+.qnav a.fix::after{content:"";position:absolute;top:2px;right:2px;width:6px;height:6px;border-radius:50%;background:var(--stamp)}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:22px clamp(16px,3vw,30px);min-width:0}
+.qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.qno{font-family:var(--f-display);font-size:24px}
+.qno small{font-family:var(--f-body);font-size:15px;color:var(--muted);margin-left:8px}
+.topic{font-size:14px;color:var(--leaf);background:var(--leaf-soft);border-radius:99px;padding:2px 12px}
+.qbody{margin-top:14px;max-width:72ch}
+.qbody p{margin:.35em 0}
+.qbody .fig{margin:14px 0}
+.qbody img{display:block;max-width:min(100%,640px);height:auto;border-radius:6px;background:#fff;padding:6px;border:1px solid var(--line)}
+.qbody table{border-collapse:collapse}
+.qbody ol{margin:.3em 0;padding-left:1.4em}
+.stem{border-left:3px solid var(--line);padding-left:14px;margin-bottom:12px;color:var(--muted)}
+.answer{margin-top:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 16px;border-radius:10px;background:var(--leaf-soft)}
+.stampbox{font-family:var(--f-num);font-size:30px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;border:2.5px solid var(--leaf);color:var(--leaf);transform:rotate(-6deg);background:var(--sheet)}
+.answer .lbl{font-family:var(--f-display);font-size:18px}
+.answer .sub{font-size:14px;color:var(--muted)}
+.reveal{border:1.5px dashed var(--leaf);background:var(--sheet);color:var(--leaf);border-radius:8px;padding:8px 16px;cursor:pointer;font-family:var(--f-display)}
+.exp{margin-top:22px;max-width:72ch}
+.exp h3{font-size:18px;margin-bottom:6px}
+.exp p{margin:.45em 0}
+.exp ul,.exp ol{margin:.4em 0;padding-left:1.3em}
+.exp li{margin:.2em 0}
+.note{margin-top:18px;border:1px solid var(--stamp);background:var(--stamp-soft);border-radius:10px;padding:12px 16px;font-size:15.5px;max-width:72ch}
+.note b{color:var(--stamp);font-family:var(--f-display);font-weight:500}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+.pager a{text-decoration:none;border:1px solid var(--line);background:var(--sheet);border-radius:8px;padding:8px 16px;color:var(--ink)}
+.pager a:hover{border-color:var(--leaf)}
+.pager .dis{visibility:hidden}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+@media (max-width:520px){body{font-size:16px}.keygrid{padding:6px 10px}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#home"><b>เฉลยวิชาสามัญชีววิทยา</b><span>ปี 2555–2560</span></a>
+    <label class="toggle" for="hideAns"><input type="checkbox" id="hideAns"> ซ่อนคำตอบไว้ก่อน (โหมดฝึก)</label>
+  </header>
+  <main id="app"></main>
+</div>
+
+<script src="data.js"></script>
+<script>
+const D=window.EXAMS||{};
+const YEARS=Object.keys(D).sort();
+const app=document.getElementById('app');
+const hideBox=document.getElementById('hideAns');
+let hide=false; try{hide=localStorage.getItem('hideAns')==='1'}catch(e){}
+hideBox.checked=hide;
+let onlyFix=false;
+const revealed=new Set();
+hideBox.addEventListener('change',()=>{hide=hideBox.checked;try{localStorage.setItem('hideAns',hide?'1':'0')}catch(e){};revealed.clear();render()});
+const byBE=be=>Object.values(D).find(x=>String(x.be)===String(be));
+const fixed=q=>q.k!=null&&q.k!==q.a;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function home(){
+  document.title='เฉลยวิชาสามัญชีววิทยา';
+  app.innerHTML=`<h1>เลือกปีข้อสอบ</h1>
+  <p class="lede">ข้อสอบวิชาสามัญชีววิทยา 6 ชุด พร้อมเฉลยทุกข้อและคำอธิบายละเอียด เลือกปีเพื่อดูตารางเฉลยรวม แล้วกดเลขข้อเพื่ออ่านคำอธิบายทีละข้อ</p>
+  <div class="years">${YEARS.slice().reverse().map(y=>{const e=D[y];const nf=e.qs.filter(fixed).length;
+   return `<a class="year" href="#y${e.be}"><span class="ce">COMMON BIOLOGY ${e.ce}</span><span class="be">${e.be}</span>
+   <span class="meta">${e.n} ข้อ</span>${e.hasKey?(nf?`<span class="tag">ตรวจทานแก้ ${nf} ข้อจากเฉลยเดิม</span>`:`<span class="tag ok">ตรงกับเฉลยเดิมทุกข้อ</span>`):`<span class="tag ok">เฉลยจัดทำใหม่ทั้งชุด</span>`}</a>`}).join('')}</div>
+  <div class="howto">
+   <div><b>ตารางเฉลยรวม</b>ดูคำตอบข้อ 1 ถึงข้อสุดท้ายในหน้าเดียว พร้อมหัวข้อเนื้อหาของแต่ละข้อ ใช้ตรวจคำตอบได้เร็ว</div>
+   <div><b>คำอธิบายรายข้อ</b>โจทย์ ภาพประกอบ คำตอบ และเหตุผลว่าทำไมข้อที่ถูกจึงถูก และข้ออื่นผิดตรงไหน</div>
+   <div><b>จุดสีส้ม</b>หมายถึงข้อที่ตรวจทานแล้วคำตอบต่างจากเฉลยเดิมในไฟล์ของครู ในหน้าข้อนั้นจะบอกเหตุผลไว้</div>
+  </div>`;
+}
+function summary(e){
+  document.title=`เฉลยชีววิทยา ${e.be}`;
+  const list=e.qs.filter(q=>!onlyFix||fixed(q));
+  const nf=e.qs.filter(fixed).length;
+  app.innerHTML=`<nav class="crumbs"><a href="#home">ทุกปี</a> › <span>ปี ${e.be}</span></nav>
+  <div class="sumhead"><div><h1>เฉลยวิชาสามัญชีววิทยา ปี ${e.be}</h1>
+   <p class="lede">Common Biology Test ${e.ce} · ${e.n} ข้อ · กดที่ข้อใดก็ได้เพื่อดูคำอธิบาย</p></div>
+   <div class="filters">${e.hasKey&&nf?`<label class="toggle" for="onlyFix"><input type="checkbox" id="onlyFix" ${onlyFix?'checked':''}> แสดงเฉพาะข้อที่แก้ไข (${nf})</label>`:''}</div></div>
+  <div class="legend"><span>ตัวเลขในวงกลม = ตัวเลือกที่ถูก</span>${e.hasKey?`<span><i></i>คำตอบต่างจากเฉลยเดิม</span>`:`<span>ปีนี้ไม่มีเฉลยเดิมในไฟล์ จึงจัดทำเฉลยใหม่ทั้งชุด</span>`}</div>
+  <div class="keygrid ${hide?'hidden-ans':''}">${list.map(q=>`<a class="row" href="#y${e.be}-q${q.n}"><span class="n">${q.n}</span><span class="a ${fixed(q)?'fix':''}">${q.a}</span><span class="t" title="${esc(q.t)}">${esc(q.t)}</span></a>`).join('')}</div>`;
+  const of=document.getElementById('onlyFix'); if(of) of.addEventListener('change',()=>{onlyFix=of.checked;render()});
+}
+function question(e,n){
+  const i=e.qs.findIndex(q=>q.n===n); if(i<0) return summary(e);
+  const q=e.qs[i],prev=e.qs[i-1],next=e.qs[i+1];
+  const key=`${e.be}-${n}`; const show=!hide||revealed.has(key);
+  document.title=`ปี ${e.be} ข้อ ${n}`;
+  app.innerHTML=`<nav class="crumbs"><a href="#home">ทุกปี</a> › <a href="#y${e.be}">ปี ${e.be}</a> › <span>ข้อ ${n}</span></nav>
+  <div class="qlayout">
+   <div class="qnav" id="qnav">${e.qs.map(x=>`<a href="#y${e.be}-q${x.n}" class="${x.n===n?'cur':''} ${fixed(x)?'fix':''}">${x.n}</a>`).join('')}</div>
+   <article class="card">
+    <div class="qtop"><div class="qno">ข้อ ${n}<small>ปี ${e.be}</small></div><span class="topic">${esc(q.t)}</span></div>
+    <div class="qbody">${q.q}</div>
+    ${show?`<div class="answer"><div class="stampbox">${q.a}</div><div><div class="lbl">ตอบข้อ ${q.a}</div>
+      <div class="sub">${q.k!=null?(fixed(q)?`เฉลยเดิมในไฟล์ให้ข้อ ${q.k} · ตรวจทานแล้วแก้เป็นข้อ ${q.a}`:'ตรงกับเฉลยเดิม'):'เฉลยจัดทำใหม่ (ไม่มีเฉลยเดิม)'}</div></div></div>
+     <section class="exp"><h3>คำอธิบาย</h3>${q.e}</section>
+     ${q.note?`<div class="note"><b>${fixed(q)?'ข้อที่แก้ไขจากเฉลยเดิม':'ข้อสังเกต'}</b><br>${q.note}</div>`:''}`
+    :`<div class="answer"><button class="reveal" id="rev">ดูคำตอบและคำอธิบาย</button><div class="sub">ลองเลือกคำตอบด้วยตัวเองก่อน แล้วกดเพื่อตรวจ</div></div>`}
+    <div class="pager">${prev?`<a href="#y${e.be}-q${prev.n}">← ข้อ ${prev.n}</a>`:'<span class="dis"></span>'}<a href="#y${e.be}">ตารางเฉลย</a>${next?`<a href="#y${e.be}-q${next.n}">ข้อ ${next.n} →</a>`:'<span class="dis"></span>'}</div>
+   </article></div>`;
+  const r=document.getElementById('rev'); if(r) r.addEventListener('click',()=>{revealed.add(key);render()});
+  const cur=document.querySelector('#qnav .cur'); if(cur){const nav=document.getElementById('qnav');nav.scrollLeft=cur.offsetLeft-nav.clientWidth/2+cur.clientWidth/2}
+}
+function render(){
+  const h=(location.hash||'').slice(1);
+  let m=h.match(/^y(\d{4})-q(\d+)$/);
+  if(m&&byBE(m[1])) return question(byBE(m[1]),+m[2]);
+  m=h.match(/^y(\d{4})$/);
+  if(m&&byBE(m[1])) return summary(byBE(m[1]));
+  home();
+}
+let lastHash=location.hash;
+window.addEventListener('hashchange',()=>{const sameYear=lastHash.slice(0,6)===location.hash.slice(0,6);lastHash=location.hash;if(!sameYear)onlyFix=false;render();window.scrollTo(0,0)});
+render();
+</script>
+
+</body></html>
